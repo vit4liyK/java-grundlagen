@@ -1,15 +1,37 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String name = "Vitaliy";
+        int alter = 30;
+        double gewicht = 85.5;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        begruesse(name);
+        zeigeAlter(alter);
+        zeigeGewicht(gewicht);
+
+        int summe = addiere(10, 25);
+        System.out.println("Summe: " + summe);
+
+        double verhältnis = berechneVerhältnis(85.5, 190.0);
+        System.out.println("Verhältnis: " + verhältnis);
+    }
+
+    static int addiere(int a, int b) {
+        return a + b;
+    }
+
+    static double berechneVerhältnis(double gewicht, double größe) {
+        return gewicht / größe;
+    }
+
+    static void begruesse(String name) {
+        System.out.println("Hallo, " + name + "!");
+    }
+
+    static void zeigeAlter(int alter) {
+        System.out.println("Du bist " + alter + " Jahre alt.");
+    }
+
+    static void zeigeGewicht(double gewicht) {
+        System.out.println("Du wiegst " + gewicht + " kg.");
     }
 }
