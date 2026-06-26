@@ -1,37 +1,31 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        String name = "Vitaliy";
-        int alter = 30;
-        double gewicht = 85.5;
+        Scanner scanner = new Scanner(System.in);
 
-        begruesse(name);
-        zeigeAlter(alter);
-        zeigeGewicht(gewicht);
+        System.out.print("Wie heißt du? ");
+        String name = scanner.nextLine();
 
-        int summe = addiere(10, 25);
-        System.out.println("Summe: " + summe);
+        System.out.print("Wie alt bist du? ");
+        int alter = scanner.nextInt();
 
-        double verhältnis = berechneVerhältnis(85.5, 190.0);
-        System.out.println("Verhältnis: " + verhältnis);
-    }
+        if (alter >= 18) {
+            System.out.println("Hallo " + name + ", du bist volljährig!");
+        }
+        else {
+            System.out.println("Hallo " + name + ", du bist noch minderjährig.");
+        }
 
-    static int addiere(int a, int b) {
-        return a + b;
-    }
+        System.out.print("Wie groß bist du? ");
+        double groeße = scanner.nextDouble();
 
-    static double berechneVerhältnis(double gewicht, double größe) {
-        return gewicht / größe;
-    }
+        if (groeße > 180.0) {
+            System.out.println("Du bist groß!");
+        } else {
+                System.out.println("Du bist durchschnittlich groß.");
+            }
 
-    static void begruesse(String name) {
-        System.out.println("Hallo, " + name + "!");
-    }
-
-    static void zeigeAlter(int alter) {
-        System.out.println("Du bist " + alter + " Jahre alt.");
-    }
-
-    static void zeigeGewicht(double gewicht) {
-        System.out.println("Du wiegst " + gewicht + " kg.");
+        scanner.close();
     }
 }
