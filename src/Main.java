@@ -1,31 +1,33 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> namen = new ArrayList<>();
+        namen.add("Vitaliy");
+        namen.add("Anna");
+        namen.add("Max");
+        namen.add("Zimko");
+        namen.add("Lola");
+        namen.remove("Anna");
 
-        System.out.print("Wie heißt du? ");
-        String name = scanner.nextLine();
+        System.out.println("Erster Name: " + namen.get(0));
+        System.out.println("Anzahl Namen: " + namen.size());
 
-        System.out.print("Wie alt bist du? ");
-        int alter = scanner.nextInt();
-
-        if (alter >= 18) {
-            System.out.println("Hallo " + name + ", du bist volljährig!");
+        for (String name : namen) {
+            System.out.println("Hallo, " + name + "!");
         }
-        else {
-            System.out.println("Hallo " + name + ", du bist noch minderjährig.");
+
+        ArrayList<Integer> zahlen = new ArrayList<>();
+        zahlen.add(10);
+        zahlen.add(25);
+        zahlen.add(7);
+        zahlen.add(42);
+
+        int summe = 0;
+        for (int zahl : zahlen) {
+            summe = summe + zahl;
         }
 
-        System.out.print("Wie groß bist du? ");
-        double groeße = scanner.nextDouble();
-
-        if (groeße > 180.0) {
-            System.out.println("Du bist groß!");
-        } else {
-                System.out.println("Du bist durchschnittlich groß.");
-            }
-
-        scanner.close();
+        System.out.println("Summe: " + summe);
     }
 }
